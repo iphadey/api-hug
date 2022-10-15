@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function (Request $request) {
     Route::get('/password/random', [PasswordController::class, 'index'])->name('password.random');
     Route::get('/card/random', [CardController::class, 'index'])->name('card.random');
+    Route::get('/user/random', [UserController::class, 'index'])->name('user.random');
 });

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\v1;
 
 use Faker\Factory;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    public function index(): string
+    public function index()
     {
         $faker = Factory::create();
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 
 class PasswordController extends Controller
 {
-    public function index(): string
+    public function index()
     {
         $digits    = array_flip(range('0', '9'));
         $lowercase = array_flip(range('a', 'z'));
@@ -16,6 +16,6 @@ class PasswordController extends Controller
 
         $password  = str_shuffle(array_rand($digits) . array_rand($lowercase) . array_rand($uppercase) . array_rand($special) . implode(array_rand($combined, rand(4, 8))));
 
-        return $password;
+        return response()->json(['value' => $password]);
     }
 }

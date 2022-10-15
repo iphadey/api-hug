@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\CardController;
 use App\Http\Controllers\Api\v1\UserController;
 use App\Http\Controllers\Api\v1\UuidController;
+use App\Http\Controllers\Api\v1\LipsumController;
 use App\Http\Controllers\Api\v1\PasswordController;
 
 /*
@@ -26,3 +27,4 @@ Route::get('/card/random', [CardController::class, 'index'])->name('card.random'
 Route::get('/user/random', [UserController::class, 'index'])->name('user.random');
 Route::get('/password/random', [PasswordController::class, 'index'])->name('password.random');
 Route::get('/uuid/random', [UuidController::class, 'index'])->name('uuid.random');
+Route::get('/lipsum/{g}', [LipsumController::class, 'index'])->name('lipsum.random')->whereNumber('g');

@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\v1\UserController;
 use App\Http\Controllers\Api\v1\UuidController;
 use App\Http\Controllers\Api\v1\LipsumController;
 use App\Http\Controllers\Api\v1\PasswordController;
+use App\Http\Controllers\Api\MnemonicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::get('/user/random', [UserController::class, 'index'])->name('user.random'
 Route::get('/password/random', [PasswordController::class, 'index'])->name('password.random');
 Route::get('/uuid/random', [UuidController::class, 'index'])->name('uuid.random');
 Route::get('/lipsum/{g}', [LipsumController::class, 'index'])->name('lipsum.random')->whereNumber('g');
+Route::post('/mnemonic/random', [MnemonicController::class, 'index'])->name('mnemonic.random');
